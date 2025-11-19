@@ -79,7 +79,7 @@ dotnet ef migrations add YourMigrationName
 From the project root:
 
 ```bash
-dotnet run
+dotnet run --launch-profile http
 ```
 
 The app should start and listen on `http://localhost:5000`. You'll see output like:
