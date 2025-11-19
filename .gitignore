@@ -1,2 +1,9 @@
 # C# build
 obj/
+bin/
+
+# Environment variables
+.env
+
+# Docker volumes (optional - uncomment if you want to ignore local volume state)
+# postgres_data/

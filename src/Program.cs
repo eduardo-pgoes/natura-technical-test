@@ -1,10 +1,15 @@
 using Natura.TechnicalTest.Extensions;
 using Natura.TechnicalTest.Features.Users;
 using Natura.TechnicalTest.Infrastructure.Data;
+using Scalar.AspNetCore;
+
+// Load environment variables from .env file
+DotNetEnv.Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddApplicationServices();
 builder.Services.AddDatabase(builder.Configuration);
 builder.Services.AddOpenApi();
 
@@ -21,6 +26,7 @@ using (var scope = app.Services.CreateScope())
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapScalarApiReference();
 }
 
 app.UseHttpsRedirection();

@@ -11,6 +11,10 @@ public static class UsersEndpoints
             .WithName("GetUsers")
             .WithOpenApi();
 
+        group.MapGet("/me", GetMe.HandleAsync)
+            .WithName("GetCurrentUser")
+            .WithOpenApi();
+
         return app;
     }
 }
