@@ -35,3 +35,5 @@ app.UseHttpsRedirection();
 app.MapUsersEndpoints();
 
 app.Run();
+
+public partial class Program { }
